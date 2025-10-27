@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Outlaw Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">Global Outlaw</div>
+      <nav class="nav">
+        <button class="nav-btn" data-section="shirts">Shirts</button>
+        <button class="nav-btn" data-section="shoes">Shoes</button>
+      </nav>
+      <button class="cart-btn" id="openCartBtn">
+        <span>Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Dress Bold. Live Outlaw.</h1>
+          <p>Modern streetwear and kicks with attitude.</p>
+          <button class="primary" data-section="shirts">Shop Shirts</button>
+        </div>
+        <div class="hero-image">
+          <img src="Picture1.png" alt="Featured" />
+        </div>
+      </section>
+
+      <section class="catalog">
+        <div class="slider-wrapper">
+          <div class="slider">
+            <div class="slide" id="slide-shirts">
+              <h2>Shirts</h2>
+              <div class="grid" id="shirtsGrid"></div>
+            </div>
+            <div class="slide" id="slide-shoes">
+              <h2>Shoes</h2>
+              <div class="grid" id="shoesGrid"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCartBtn" class="icon-btn" aria-label="Close Cart">✕</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <div class="cart-actions">
+          <button id="clearCartBtn" class="secondary">Clear</button>
+          <button id="checkoutBtn" class="primary">Checkout</button>
+        </div>
+      </div>
+    </aside>
+    <div class="backdrop" id="backdrop"></div>
+
+    <dialog id="checkoutDialog" class="checkout-dialog">
+      <form method="dialog" id="checkoutForm" class="checkout-form">
+        <h3>Checkout</h3>
+        <label>
+          <span>Name</span>
+          <input type="text" id="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" id="email" required />
+        </label>
+        <label>
+          <span>Address</span>
+          <input type="text" id="address" required />
+        </label>
+        <menu class="dialog-actions">
+          <button value="cancel" class="secondary">Cancel</button>
+          <button value="submit" class="primary">Place Order</button>
+        </menu>
+      </form>
+    </dialog>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="brand">Global Outlaw</div>
+          <div class="muted">© <span id="year"></span> All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
